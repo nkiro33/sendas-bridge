@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SendAs Bridge — Keep sending from your own domain in Gmail after &quot;Send mail as&quot; ends</title>
+<meta name="description" content="Gmail is ending &quot;Send mail as&quot; for other addresses in January 2027. SendAs Bridge keeps you replying from you@yourdomain.com inside Gmail, through your own email provider. Free, no servers.">
+<link rel="canonical" href="https://nkiro33.github.io/sendas-bridge/">
+<link rel="icon" type="image/png" href="./assets/icon48.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SendAs Bridge — Keep sending from your own domain in Gmail after &quot;Send mail as&quot; ends">
+<meta property="og:description" content="Gmail is ending &quot;Send mail as&quot; for other addresses in January 2027. SendAs Bridge keeps you replying from you@yourdomain.com inside Gmail, through your own email provider. Free, no servers.">
+<meta property="og:url" content="https://nkiro33.github.io/sendas-bridge/">
+<meta property="og:image" content="https://nkiro33.github.io/sendas-bridge/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="./assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SendAs Bridge","applicationCategory":"CommunicationApplication","operatingSystem":"Chrome, Edge","offers":[{"@type":"Offer","price":"0","priceCurrency":"USD"},{"@type":"Offer","price":"19","priceCurrency":"USD","name":"Pro (lifetime)"}],"description":"Send mail as your own domain in Gmail through your own email provider."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Gmail really removing \"Send mail as\"?","acceptedAnswer":{"@type":"Answer","text":"Yes. Google's help page \"Learn about changes to third-party email account support in Gmail\" says that in January 2027 Gmail removes \"Send as\" for third-party addresses on the web and in the mobile apps, together with Gmailify and POP fetching, and that new setups are restricted before then. Send-as for Gmail addresses and Google Workspace aliases keeps working."}},{"@type":"Question","name":"How does SendAs Bridge work?","acceptedAnswer":{"@type":"Answer","text":"You keep receiving your domain's mail in Gmail through forwarding (Cloudflare Email Routing, ImprovMX, your registrar…). When you write or reply in Gmail and pick your own address in the From row, SendAs Bridge takes the message you wrote and sends it through your own email provider's API (Resend, Brevo, SMTP2GO, Amazon SES and others), then removes the Gmail draft."}},{"@type":"Question","name":"Do I need to give you my password?","acceptedAnswer":{"@type":"Answer","text":"No. SendAs Bridge never asks for your Gmail password, Google tokens or your email password. It uses an API key from your own email provider. The key stays in your browser, and you can revoke it in the provider's dashboard at any time."}},{"@type":"Question","name":"Does my email go through your servers?","acceptedAnswer":{"@type":"Answer","text":"No. There are no SendAs Bridge servers. Your browser talks directly to the email provider you chose. The only other request is a license check with Gumroad if you buy Pro."}},{"@type":"Question","name":"Will replies stay in the same conversation?","acceptedAnswer":{"@type":"Answer","text":"Yes. SendAs Bridge copies the original message's Message-ID into the In-Reply-To and References headers and keeps the \"Re:\" subject, the same way Gmail does, so recipients see one thread. A copy of what you sent is Bcc'd to your Gmail so it appears in your own conversation too."}},{"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"The free version sends from one address with every sending feature: attachments, inline images, reply threading, Undo and the domain check. Pro is a one-time $19 for unlimited addresses and domains, several providers and catch-all addresses. Most email providers have a free plan that easily covers personal mail."}},{"@type":"Question","name":"Does it work on my phone?","acceptedAnswer":{"@type":"Answer","text":"No. Browser extensions run in desktop Chrome and Edge. Gmail's mobile apps lose \"Send as\" for other addresses too, so on the phone you can read your mail and reply later from the computer."}},{"@type":"Question","name":"Can I use it with an @outlook.com, @yahoo.com or @icloud.com address?","acceptedAnswer":{"@type":"Answer","text":"Not today. Email providers can only send for domains you control in DNS, so SendAs Bridge works with your own domain (for example you@yourname.com)."}}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="logo" href="./"><img src="./assets/icon48.png" alt="" width="30" height="30">SendAs Bridge</a>
+  <nav class="top"><a class="hide-sm" href="./gmail-send-as-stopped-working/">Gmail change</a><a class="hide-sm" href="./guides/">Setup guides</a><a href="./#pricing">Pricing</a><a href="https://chromewebstore.google.com/search/SendAs%20Bridge" class="btn small">Add to Chrome</a></nav>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <h1>Gmail is ending “Send mail as”.<br>Keep sending from you@yourdomain.com.</h1>
+  <p class="lead">SendAs Bridge adds a <b>From</b> row to Gmail. Pick your own address, write as usual, and your email goes out through your own email provider — with attachments, pictures and replies that stay in the same conversation.</p>
+  <div class="ctas"><a class="btn" href="https://chromewebstore.google.com/search/SendAs%20Bridge">Add to Chrome — free</a><a class="btn alt" href="https://microsoftedge.microsoft.com/addons/search/SendAs%20Bridge">Get it for Edge</a></div>
+  <p class="note">Free for one address · No servers · Your keys never leave your browser</p>
+  <div class="shot"><img src="assets/gmail-compose.png" width="1092" height="1111" alt="Gmail compose window with SendAs Bridge's From row showing Your Name <hello@yourdomain.com> via Resend"></div>
+</div></div>
+
+<section><div class="wrap">
+  <h2>What's changing in Gmail</h2>
+  <p>Google's help page says that in <b>January 2027</b> Gmail removes “Send as” for addresses it doesn't host, on the web and in the mobile apps, along with Gmailify and POP fetching — and restricts new setups before that (<a href="https://support.google.com/mail/answer/17101213">Google Help</a>). If you receive your domain's mail in Gmail through Cloudflare Email Routing, ImprovMX or your registrar's forwarding and reply with “Send mail as”, the receiving half keeps working; the sending half stops.</p>
+  <p><a href="gmail-send-as-stopped-working/">Read the full explanation and your options →</a></p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="card"><h3>Connect a provider</h3><p>Use a free plan at Resend, Brevo, SMTP2GO and others, or Amazon SES. Verify your domain there and paste an API key into SendAs Bridge.</p></div>
+    <div class="card"><h3>Pick your address in Gmail</h3><p>Every compose window gets a From row. Replies automatically use the address the email was sent to.</p></div>
+    <div class="card"><h3>Click Send</h3><p>The message goes out from your domain through your provider. A copy lands in your Gmail conversation, and the draft is cleaned up.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Everything a real email needs</h2>
+  <div class="grid3">
+    <div class="card"><h3>Replies that thread</h3><p>In-Reply-To and References headers from the original message, the “Re:” subject and the quoted history, exactly like Gmail.</p></div>
+    <div class="card"><h3>Attachments and pictures</h3><p>Files you attach, screenshots you paste and images in the quoted message are all sent properly (inline, not as links).</p></div>
+    <div class="card"><h3>Your sent mail in Gmail</h3><p>Each message is Bcc'd to your Gmail and appears in the conversation. A one-click Gmail filter labels it and keeps it out of your inbox.</p></div>
+    <div class="card"><h3>Undo send</h3><p>A short countdown after you click Send, like Gmail's own Undo. Cmd/Ctrl+Enter works too.</p></div>
+    <div class="card"><h3>Domain check</h3><p>Reads your SPF, DKIM, DMARC and MX records and says in plain words what to fix — including merging two SPF records into one.</p></div>
+    <div class="card"><h3>Private by design</h3><p>No servers, no accounts, no analytics. API keys stay in your browser, optionally encrypted with a passphrase.</p></div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>Works with your email provider</h2>
+  <div class="providers"><span>Resend</span><span>Brevo</span><span>SMTP2GO</span><span>Mailgun</span><span>Amazon SES</span><span>Postmark</span><span>Cloudflare Email Sending</span><span>Mailjet</span><span>SendGrid</span></div>
+  <p class="muted small">Pick one with a free plan if you don't have one yet. <a href="guides/">Step-by-step setup guides →</a></p>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <h2>Pricing</h2>
+  <table>
+    <tr><th></th><th>Free</th><th>Pro — $19 once</th></tr>
+    <tr><td>Send from your own address in Gmail</td><td>1 address</td><td>Unlimited addresses and domains</td></tr>
+    <tr><td>Attachments, inline images, reply threading</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Copy in Gmail, Undo send, domain check</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Several email providers</td><td>–</td><td>✓</td></tr>
+    <tr><td>Catch-all addresses (*@yourdomain.com): reply from whichever address was written to</td><td>–</td><td>✓</td></tr>
+  </table>
+  <p class="small muted">Pro is a lifetime license for up to 5 browsers, sold through Gumroad with a 30-day money-back guarantee. Compare: Google Workspace starts at about $7 per user per month. <a href="cost/">See the cost comparison →</a></p>
+  <p><a class="btn alt" href="https://neblaze4.gumroad.com/l/sendas-pro">Buy Pro</a></p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>Questions</h2>
+  <details><summary>Is Gmail really removing &quot;Send mail as&quot;?</summary><p>Yes. Google's help page <a href="https://support.google.com/mail/answer/17101213">"Learn about changes to third-party email account support in Gmail"</a> says that in January 2027 Gmail removes "Send as" for third-party addresses on the web and in the mobile apps, together with Gmailify and POP fetching, and that new setups are restricted before then. Send-as for Gmail addresses and Google Workspace aliases keeps working.</p></details>
+<details><summary>How does SendAs Bridge work?</summary><p>You keep receiving your domain's mail in Gmail through forwarding (Cloudflare Email Routing, ImprovMX, your registrar…). When you write or reply in Gmail and pick your own address in the From row, SendAs Bridge takes the message you wrote and sends it through your own email provider's API (Resend, Brevo, SMTP2GO, Amazon SES and others), then removes the Gmail draft.</p></details>
+<details><summary>Do I need to give you my password?</summary><p>No. SendAs Bridge never asks for your Gmail password, Google tokens or your email password. It uses an API key from your own email provider. The key stays in your browser, and you can revoke it in the provider's dashboard at any time.</p></details>
+<details><summary>Does my email go through your servers?</summary><p>No. There are no SendAs Bridge servers. Your browser talks directly to the email provider you chose. The only other request is a license check with Gumroad if you buy Pro.</p></details>
+<details><summary>Will replies stay in the same conversation?</summary><p>Yes. SendAs Bridge copies the original message's Message-ID into the In-Reply-To and References headers and keeps the "Re:" subject, the same way Gmail does, so recipients see one thread. A copy of what you sent is Bcc'd to your Gmail so it appears in your own conversation too.</p></details>
+<details><summary>What does it cost?</summary><p>The free version sends from one address with every sending feature: attachments, inline images, reply threading, Undo and the domain check. Pro is a one-time $19 for unlimited addresses and domains, several providers and catch-all addresses. Most email providers have a free plan that easily covers personal mail.</p></details>
+<details><summary>Does it work on my phone?</summary><p>No. Browser extensions run in desktop Chrome and Edge. Gmail's mobile apps lose "Send as" for other addresses too, so on the phone you can read your mail and reply later from the computer.</p></details>
+<details><summary>Can I use it with an @outlook.com, @yahoo.com or @icloud.com address?</summary><p>Not today. Email providers can only send for domains you control in DNS, so SendAs Bridge works with your own domain (for example you@yourname.com).</p></details>
+</div></section>
+
+<section><div class="wrap" style="text-align:center">
+  <h2>Keep your address. Keep Gmail.</h2>
+  <p class="muted">Set up takes about 10 minutes with a free provider.</p>
+  <div style="display:flex;justify-content:center"><div class="ctas"><a class="btn" href="https://chromewebstore.google.com/search/SendAs%20Bridge">Add to Chrome — free</a><a class="btn alt" href="https://microsoftedge.microsoft.com/addons/search/SendAs%20Bridge">Get it for Edge</a></div></div>
+</div></section>
+<footer class="site"><div class="wrap">
+  <a href="./">Home</a><a href="./guides/">Guides</a><a href="./cost/">Cost comparison</a><a href="./privacy/">Privacy</a><a href="./support/">Support</a>
+  <p>SendAs Bridge is an independent browser extension by Cedar Labs. It is not affiliated with or endorsed by Google. Gmail is a trademark of Google LLC.</p>
+</div></footer>
+</body>
+</html>

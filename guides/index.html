@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup guides: send from your domain in Gmail with Resend, Brevo, SMTP2GO, SES and more</title>
+<meta name="description" content="Step-by-step guides to keep sending as you@yourdomain.com from Gmail with SendAs Bridge and your email provider of choice.">
+<link rel="canonical" href="https://nkiro33.github.io/sendas-bridge/guides/">
+<link rel="icon" type="image/png" href="../assets/icon48.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Setup guides: send from your domain in Gmail with Resend, Brevo, SMTP2GO, SES and more">
+<meta property="og:description" content="Step-by-step guides to keep sending as you@yourdomain.com from Gmail with SendAs Bridge and your email provider of choice.">
+<meta property="og:url" content="https://nkiro33.github.io/sendas-bridge/guides/">
+<meta property="og:image" content="https://nkiro33.github.io/sendas-bridge/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="logo" href="../"><img src="../assets/icon48.png" alt="" width="30" height="30">SendAs Bridge</a>
+  <nav class="top"><a class="hide-sm" href="../gmail-send-as-stopped-working/">Gmail change</a><a class="hide-sm" href="../guides/">Setup guides</a><a href="../#pricing">Pricing</a><a href="https://chromewebstore.google.com/search/SendAs%20Bridge" class="btn small">Add to Chrome</a></nav>
+</div></header>
+<div class="wrap"><article>
+<h1>Setup guides</h1>
+<p>Pick the email provider that will send your mail. If you don't have one, Resend is the quickest to set up and Brevo has the biggest free plan.</p>
+<table><tr><th>Provider</th><th>Free plan</th><th>Guide</th></tr>
+<tr><td><b>Resend</b><div class="small muted">Developer-friendly, quick domain setup. Good default.</div></td><td>3,000 emails a month free (100 a day)</td><td><a href="resend/">Set up Resend →</a></td></tr>
+<tr><td><b>Brevo</b><div class="small muted">Generous free plan. Pasted images arrive as attachments, not inline.</div></td><td>300 emails a day free</td><td><a href="brevo/">Set up Brevo →</a></td></tr>
+<tr><td><b>SMTP2GO</b><div class="small muted">Popular with former Gmail &quot;Send mail as&quot; users. Simple verified-sender setup.</div></td><td>1,000 emails a month free (200 a day)</td><td><a href="smtp2go/">Set up SMTP2GO →</a></td></tr>
+<tr><td><b>Mailgun</b><div class="small muted">Sends the exact message SendAs Bridge builds (raw MIME).</div></td><td>100 emails a day on the free plan</td><td><a href="mailgun/">Set up Mailgun →</a></td></tr>
+<tr><td><b>Amazon SES</b><div class="small muted">Cheapest at volume. New accounts start in a sandbox until AWS approves production access.</div></td><td>About $0.10 per 1,000 emails (3,000 a month free for the first 12 months)</td><td><a href="amazon-ses/">Set up Amazon SES →</a></td></tr>
+<tr><td><b>Postmark</b><div class="small muted">Excellent deliverability for personal mail. Paid plans from $15/month.</div></td><td>100 emails a month free; new accounts need approval before sending to anyone</td><td><a href="postmark/">Set up Postmark →</a></td></tr>
+<tr><td><b>Cloudflare Email Sending</b><div class="small muted">Same place as your Cloudflare Email Routing. Public beta. 5 MB per email.</div></td><td>Needs the Workers Paid plan; 3,000 emails a month included, then $0.35 per 1,000</td><td><a href="cloudflare-email-sending/">Set up Cloudflare Email Sending →</a></td></tr>
+<tr><td><b>Mailjet</b><div class="small muted">European provider with a free plan.</div></td><td>6,000 emails a month free (200 a day)</td><td><a href="mailjet/">Set up Mailjet →</a></td></tr>
+<tr><td><b>SendGrid</b><div class="small muted">Use it if you already have a SendGrid account.</div></td><td>Free trial, then paid plans (Twilio SendGrid)</td><td><a href="sendgrid/">Set up SendGrid →</a></td></tr>
+</table>
+<h2>Using a forwarding service?</h2>
+<ul>
+  <li><a href="../cloudflare-email-routing-reply-from-gmail/">Cloudflare Email Routing</a></li>
+  <li><a href="improvmx/">ImprovMX</a></li>
+</ul>
+</article></div>
+<footer class="site"><div class="wrap">
+  <a href="../">Home</a><a href="../guides/">Guides</a><a href="../cost/">Cost comparison</a><a href="../privacy/">Privacy</a><a href="../support/">Support</a>
+  <p>SendAs Bridge is an independent browser extension by Cedar Labs. It is not affiliated with or endorsed by Google. Gmail is a trademark of Google LLC.</p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gmail &quot;Send mail as&quot; stopped working? What changes in 2027 and what to do</title>
+<meta name="description" content="Gmail is removing &quot;Send mail as&quot; for third-party addresses (Cloudflare, ImprovMX, Outlook…) in January 2027 and restricting new setups now. Here is what still works and every way to keep replying from your own address.">
+<link rel="canonical" href="https://nkiro33.github.io/sendas-bridge/gmail-send-as-stopped-working/">
+<link rel="icon" type="image/png" href="../assets/icon48.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gmail &quot;Send mail as&quot; stopped working? What changes in 2027 and what to do">
+<meta property="og:description" content="Gmail is removing &quot;Send mail as&quot; for third-party addresses (Cloudflare, ImprovMX, Outlook…) in January 2027 and restricting new setups now. Here is what still works and every way to keep replying from your own address.">
+<meta property="og:url" content="https://nkiro33.github.io/sendas-bridge/gmail-send-as-stopped-working/">
+<meta property="og:image" content="https://nkiro33.github.io/sendas-bridge/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When does Gmail remove Send mail as?","acceptedAnswer":{"@type":"Answer","text":"January 2027, according to Google Help answer 17101213. New configurations are restricted before then."}},{"@type":"Question","name":"Does email forwarding to Gmail keep working?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can keep forwarding your domain or other mailbox to Gmail. Only sending as the other address, Gmailify and POP fetching are removed."}},{"@type":"Question","name":"Can I still send from my own domain in Gmail?","acceptedAnswer":{"@type":"Answer","text":"Not with Gmail's built-in feature unless the address is a Google Workspace alias. A browser extension such as SendAs Bridge can send it through your own email provider instead."}}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="logo" href="../"><img src="../assets/icon48.png" alt="" width="30" height="30">SendAs Bridge</a>
+  <nav class="top"><a class="hide-sm" href="../gmail-send-as-stopped-working/">Gmail change</a><a class="hide-sm" href="../guides/">Setup guides</a><a href="../#pricing">Pricing</a><a href="https://chromewebstore.google.com/search/SendAs%20Bridge" class="btn small">Add to Chrome</a></nav>
+</div></header>
+<div class="wrap"><article>
+<h1>Gmail “Send mail as” is ending. Here's what to do.</h1>
+<p class="meta">Updated October 2026 · 6 minute read</p>
+<div class="toc"><b>On this page:</b> <a href="#what">What Google is changing</a> · <a href="#who">Who is affected</a> · <a href="#works">What keeps working</a> · <a href="#options">Your options</a> · <a href="#bridge">Keep using Gmail with SendAs Bridge</a></div>
+
+<h2 id="what">What Google is changing</h2>
+<p>Google's help article <a href="https://support.google.com/mail/answer/17101213">“Learn about changes to third-party email account support in Gmail”</a> sets out the timeline:</p>
+<ul>
+  <li><b>Now (second half of 2026):</b> Gmail shows notices and <b>may restrict new configurations</b>. Some people already see “Send mail as” addresses fail with errors such as “You no longer have access to…”.</li>
+  <li><b>January 2027:</b> Gmail fully removes <b>“Send as” for third-party accounts</b>, <b>Gmailify</b> and <b>POP</b> fetching (“Check mail from other accounts”) — on the web and in the Gmail mobile apps.</li>
+</ul>
+<p>“Third-party” means any address Google doesn't host: your own domain on Cloudflare Email Routing, ImprovMX, Namecheap or Porkbun forwarding, Zoho, Outlook.com, Yahoo and so on.</p>
+
+<h2 id="who">Who is affected</h2>
+<p>The common free setup for a personal or small-business domain is:</p>
+<ol>
+  <li>Receive: forward you@yourdomain.com to your Gmail (Cloudflare Email Routing, ImprovMX, registrar forwarding).</li>
+  <li>Send: add you@yourdomain.com under Gmail's <i>Settings → Accounts → Send mail as</i>, using an SMTP server (often Brevo, SMTP2GO, Amazon SES or your host's SMTP).</li>
+</ol>
+<p>Step 1 keeps working. Step 2 is what Gmail removes. Hosted bridges that rely on Gmail's own “Send mail as” (SMTP relays you plug into Gmail) lose their sending path for the same reason.</p>
+
+<h2 id="works">What keeps working</h2>
+<ul>
+  <li><b>Forwarding into Gmail</b> — your mail still arrives.</li>
+  <li><b>“Send as” for Google-hosted addresses</b> — other Gmail addresses and Google Workspace aliases.</li>
+  <li><b>IMAP/POP/Gmail API for other apps</b> — you can still use Gmail from Thunderbird, Apple Mail or Outlook.</li>
+</ul>
+
+<h2 id="options">Your options</h2>
+<table>
+<tr><th>Option</th><th>Cost</th><th>Keep using Gmail?</th><th>Effort</th></tr>
+<tr><td><b>Google Workspace</b> for your domain</td><td>From about $7/user/month</td><td>Yes (as a new account)</td><td>Move mail, change MX</td></tr>
+<tr><td>Move to another mailbox (Fastmail, Zoho, Proton, Purelymail)</td><td>Free to ~$5/month</td><td>No</td><td>Change MX, new app</td></tr>
+<tr><td>Desktop mail app with SMTP (Thunderbird, Apple Mail)</td><td>Free</td><td>Partly (read in Gmail, send from the app)</td><td>Two apps</td></tr>
+<tr><td><b>SendAs Bridge</b> + a free email provider</td><td>Free for one address, $19 once for Pro</td><td><b>Yes, same inbox</b></td><td>About 10 minutes</td></tr>
+</table>
+
+<h2 id="bridge">Keep using Gmail with SendAs Bridge</h2>
+<p>SendAs Bridge is a Chrome and Edge extension that brings the sending half back. It adds a <b>From</b> row to every Gmail compose window. When you pick your own address, the email you wrote in Gmail is sent through your own email provider's API instead of Gmail — attachments, pasted images and reply threading included — and a copy is Bcc'd back to your Gmail so the conversation stays complete.</p>
+<div class="callout ok">No password and no Google access tokens: Google's page warns about tools that ask for them. SendAs Bridge only uses an API key from <i>your</i> email provider, kept in your browser.</div>
+<ol>
+  <li><a href="https://chromewebstore.google.com/search/SendAs%20Bridge">Install SendAs Bridge</a> (Chrome) or <a href="https://microsoftedge.microsoft.com/addons/search/SendAs%20Bridge">for Edge</a>.</li>
+  <li>Pick an email provider. If you used Brevo, SMTP2GO or Amazon SES for Gmail's SMTP before, you already have one — just create an API key. Otherwise <a href="../guides/resend/">Resend</a> takes about 10 minutes.</li>
+  <li>Add your address, run the domain check and send yourself a test.</li>
+  <li>In Gmail, pick your address in the From row and click Send.</li>
+</ol>
+<p><a class="btn" href="https://chromewebstore.google.com/search/SendAs%20Bridge">Add SendAs Bridge to Chrome</a></p>
+<p class="small muted">Using Cloudflare Email Routing? <a href="../cloudflare-email-routing-reply-from-gmail/">Read the Cloudflare guide</a>. Using ImprovMX? <a href="../guides/improvmx/">Read the ImprovMX guide</a>.</p>
+</article></div>
+<footer class="site"><div class="wrap">
+  <a href="../">Home</a><a href="../guides/">Guides</a><a href="../cost/">Cost comparison</a><a href="../privacy/">Privacy</a><a href="../support/">Support</a>
+  <p>SendAs Bridge is an independent browser extension by Cedar Labs. It is not affiliated with or endorsed by Google. Gmail is a trademark of Google LLC.</p>
+</div></footer>
+</body>
+</html>

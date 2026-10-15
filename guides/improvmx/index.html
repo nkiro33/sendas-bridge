@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ImprovMX + Gmail after &quot;Send mail as&quot; ends: how to keep replying from your domain</title>
+<meta name="description" content="ImprovMX keeps forwarding your domain to Gmail, but Gmail drops &quot;Send mail as&quot; in 2027. Keep replying as you@yourdomain.com with SendAs Bridge and a free sending provider.">
+<link rel="canonical" href="https://nkiro33.github.io/sendas-bridge/guides/improvmx/">
+<link rel="icon" type="image/png" href="../../assets/icon48.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ImprovMX + Gmail after &quot;Send mail as&quot; ends: how to keep replying from your domain">
+<meta property="og:description" content="ImprovMX keeps forwarding your domain to Gmail, but Gmail drops &quot;Send mail as&quot; in 2027. Keep replying as you@yourdomain.com with SendAs Bridge and a free sending provider.">
+<meta property="og:url" content="https://nkiro33.github.io/sendas-bridge/guides/improvmx/">
+<meta property="og:image" content="https://nkiro33.github.io/sendas-bridge/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="logo" href="../../"><img src="../../assets/icon48.png" alt="" width="30" height="30">SendAs Bridge</a>
+  <nav class="top"><a class="hide-sm" href="../../gmail-send-as-stopped-working/">Gmail change</a><a class="hide-sm" href="../../guides/">Setup guides</a><a href="../../#pricing">Pricing</a><a href="https://chromewebstore.google.com/search/SendAs%20Bridge" class="btn small">Add to Chrome</a></nav>
+</div></header>
+<div class="wrap"><article>
+<h1>Using ImprovMX with Gmail after “Send mail as” ends</h1>
+<p class="meta">Updated October 2026</p>
+<p>ImprovMX forwards you@yourdomain.com to your Gmail, and its SMTP (or another SMTP service) let you reply through Gmail's <i>Send mail as</i>. Gmail removes <i>Send mail as</i> for non-Google addresses in January 2027 (<a href="https://support.google.com/mail/answer/17101213">Google Help</a>), so the reply half needs a new path. ImprovMX forwarding itself keeps working.</p>
+<h2>Keep ImprovMX, change how you send</h2>
+<ol>
+  <li>Leave your ImprovMX aliases and MX records as they are.</li>
+  <li>Choose a sending provider with an HTTP API: <a href="../resend/">Resend</a>, <a href="../brevo/">Brevo</a> or <a href="../smtp2go/">SMTP2GO</a> all have free plans. Verify your domain there.</li>
+  <li>Install <a href="https://chromewebstore.google.com/search/SendAs%20Bridge">SendAs Bridge</a>, connect the provider with an API key, and add your address.</li>
+  <li>Reply in Gmail with your address selected in the From row.</li>
+</ol>
+<h2>SPF: one record only</h2>
+<p>ImprovMX asks for <code>v=spf1 include:spf.improvmx.com ~all</code>. If your sending provider needs an SPF include on the root domain (Mailgun, Mailjet), <b>add it to that same record</b> — two SPF records break SPF. SendAs Bridge's domain check shows the merged record to paste.</p>
+<p><a class="btn" href="https://chromewebstore.google.com/search/SendAs%20Bridge">Add SendAs Bridge to Chrome</a></p>
+</article></div>
+<footer class="site"><div class="wrap">
+  <a href="../../">Home</a><a href="../../guides/">Guides</a><a href="../../cost/">Cost comparison</a><a href="../../privacy/">Privacy</a><a href="../../support/">Support</a>
+  <p>SendAs Bridge is an independent browser extension by Cedar Labs. It is not affiliated with or endorsed by Google. Gmail is a trademark of Google LLC.</p>
+</div></footer>
+</body>
+</html>

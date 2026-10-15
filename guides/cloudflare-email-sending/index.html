@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Send from your own domain in Gmail with Cloudflare Email Sending (setup guide)</title>
+<meta name="description" content="Step-by-step: use Cloudflare Email Sending to keep sending as you@yourdomain.com from Gmail after &quot;Send mail as&quot; ends. Needs the Workers Paid plan; 3,000 emails a month included, then $0.35 per 1,000. About 10 minutes.">
+<link rel="canonical" href="https://nkiro33.github.io/sendas-bridge/guides/cloudflare-email-sending/">
+<link rel="icon" type="image/png" href="../../assets/icon48.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Send from your own domain in Gmail with Cloudflare Email Sending (setup guide)">
+<meta property="og:description" content="Step-by-step: use Cloudflare Email Sending to keep sending as you@yourdomain.com from Gmail after &quot;Send mail as&quot; ends. Needs the Workers Paid plan; 3,000 emails a month included, then $0.35 per 1,000. About 10 minutes.">
+<meta property="og:url" content="https://nkiro33.github.io/sendas-bridge/guides/cloudflare-email-sending/">
+<meta property="og:image" content="https://nkiro33.github.io/sendas-bridge/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Send from your own domain in Gmail with Cloudflare Email Sending","totalTime":"PT15M","step":[{"@type":"HowToStep","position":1,"text":"Your domain must use Cloudflare DNS, and your account needs the Workers Paid plan (3,000 emails a month included)."},{"@type":"HowToStep","position":2,"text":"In the Cloudflare dashboard open Email Service → Email Sending and onboard your domain. Cloudflare adds the DNS records for you."},{"@type":"HowToStep","position":3,"text":"Copy your Account ID from the domain's Overview page."},{"@type":"HowToStep","position":4,"text":"Go to My Profile → API Tokens → Create Token, give it permission to send email (Email Sending) for your account, and copy the token."},{"@type":"HowToStep","position":5,"text":"Install SendAs Bridge and connect the provider with the API key."},{"@type":"HowToStep","position":6,"text":"Add your address, run the domain check and send a test."},{"@type":"HowToStep","position":7,"text":"In Gmail, choose your address in the From row and send."}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="logo" href="../../"><img src="../../assets/icon48.png" alt="" width="30" height="30">SendAs Bridge</a>
+  <nav class="top"><a class="hide-sm" href="../../gmail-send-as-stopped-working/">Gmail change</a><a class="hide-sm" href="../../guides/">Setup guides</a><a href="../../#pricing">Pricing</a><a href="https://chromewebstore.google.com/search/SendAs%20Bridge" class="btn small">Add to Chrome</a></nav>
+</div></header>
+<div class="wrap"><article>
+<h1>Send from your own domain in Gmail with Cloudflare Email Sending</h1>
+<p class="meta">Setup guide · about 10 minutes · Needs the Workers Paid plan; 3,000 emails a month included, then $0.35 per 1,000</p>
+<p>Gmail is ending “Send mail as” for addresses it doesn't host (<a href="https://support.google.com/mail/answer/17101213">Google Help</a>). With Cloudflare Email Sending and SendAs Bridge you keep writing in Gmail, and your email is sent from you@yourdomain.com through your own Cloudflare Email Sending account.</p>
+<p>Same place as your Cloudflare Email Routing. Public beta. 5 MB per email.</p>
+<h2>1. Set up Cloudflare Email Sending</h2>
+<ol><li>Your domain must use Cloudflare DNS, and your account needs the Workers Paid plan (3,000 emails a month included).</li><li>In the Cloudflare dashboard open Email Service → Email Sending and onboard your domain. Cloudflare adds the DNS records for you.</li><li>Copy your Account ID from the domain's Overview page.</li><li>Go to My Profile → API Tokens → Create Token, give it permission to send email (Email Sending) for your account, and copy the token.</li></ol>
+<div class="callout">Cloudflare Email Sending is in public beta and limits each email to 5 MB.<br>You keep using Cloudflare Email Routing to receive mail in Gmail.</div>
+<h2>2. Connect it to SendAs Bridge</h2>
+<ol>
+  <li><a href="https://chromewebstore.google.com/search/SendAs%20Bridge">Install SendAs Bridge</a> (or <a href="https://microsoftedge.microsoft.com/addons/search/SendAs%20Bridge">for Edge</a>). The setup page opens automatically.</li>
+  <li>Choose <b>Cloudflare Email Sending</b> and fill in:<ul><li><b>Account ID</b> — Cloudflare dashboard → any domain → Overview → &quot;Account ID&quot; in the right column.</li><li><b>API token</b> — My Profile → API Tokens → Create Token, with the Email Sending &quot;send&quot; permission for your account.</li></ul></li>
+  <li>Click <b>Connect</b>. Chrome asks to let SendAs Bridge reach Cloudflare Email Sending's API — click Allow. The key is checked right away.</li>
+  <li>Add your address (for example you@yourdomain.com) and your name.</li>
+  <li>Run the <b>domain check</b> and fix anything marked ❌, then <b>send yourself a test</b>. Open it in Gmail: SendAs Bridge shows Gmail's SPF, DKIM and DMARC verdict.</li>
+</ol>
+<h2>3. Send from Gmail</h2>
+<p>Open Gmail, start a new email or a reply, and pick your address in the <b>From</b> row at the top of the compose window. Replies to mail sent to your domain select it automatically. Click Send; a copy appears in your Gmail conversation.</p>
+<h2>What's supported with Cloudflare Email Sending</h2>
+<ul>
+  <li>Inline pictures: yes, sent as real inline images</li>
+  <li>Reply threading: yes (In-Reply-To and References headers)</li>
+  <li>Maximum email size: about 5 MB, up to 50 recipients</li>
+</ul>
+<p><a class="btn" href="https://chromewebstore.google.com/search/SendAs%20Bridge">Add SendAs Bridge to Chrome — free</a></p>
+<p class="small muted">Other guides: <a href="../resend/">Resend</a> · <a href="../brevo/">Brevo</a> · <a href="../smtp2go/">SMTP2GO</a> · <a href="../mailgun/">Mailgun</a> · <a href="../amazon-ses/">Amazon SES</a> · <a href="../postmark/">Postmark</a> · <a href="../mailjet/">Mailjet</a> · <a href="../sendgrid/">SendGrid</a></p>
+</article></div>
+<footer class="site"><div class="wrap">
+  <a href="../../">Home</a><a href="../../guides/">Guides</a><a href="../../cost/">Cost comparison</a><a href="../../privacy/">Privacy</a><a href="../../support/">Support</a>
+  <p>SendAs Bridge is an independent browser extension by Cedar Labs. It is not affiliated with or endorsed by Google. Gmail is a trademark of Google LLC.</p>
+</div></footer>
+</body>
+</html>

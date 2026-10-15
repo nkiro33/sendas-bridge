@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reply from your Cloudflare Email Routing address in Gmail (after Send mail as ends)</title>
+<meta name="description" content="Cloudflare Email Routing forwards your domain to Gmail, but Gmail is ending &quot;Send mail as&quot; in 2027. Here is how to keep replying as you@yourdomain.com from Gmail, free.">
+<link rel="canonical" href="https://nkiro33.github.io/sendas-bridge/cloudflare-email-routing-reply-from-gmail/">
+<link rel="icon" type="image/png" href="../assets/icon48.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reply from your Cloudflare Email Routing address in Gmail (after Send mail as ends)">
+<meta property="og:description" content="Cloudflare Email Routing forwards your domain to Gmail, but Gmail is ending &quot;Send mail as&quot; in 2027. Here is how to keep replying as you@yourdomain.com from Gmail, free.">
+<meta property="og:url" content="https://nkiro33.github.io/sendas-bridge/cloudflare-email-routing-reply-from-gmail/">
+<meta property="og:image" content="https://nkiro33.github.io/sendas-bridge/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="logo" href="../"><img src="../assets/icon48.png" alt="" width="30" height="30">SendAs Bridge</a>
+  <nav class="top"><a class="hide-sm" href="../gmail-send-as-stopped-working/">Gmail change</a><a class="hide-sm" href="../guides/">Setup guides</a><a href="../#pricing">Pricing</a><a href="https://chromewebstore.google.com/search/SendAs%20Bridge" class="btn small">Add to Chrome</a></nav>
+</div></header>
+<div class="wrap"><article>
+<h1>Reply from your Cloudflare Email Routing address in Gmail</h1>
+<p class="meta">Updated October 2026 · Works with Cloudflare Email Routing + any sending provider</p>
+<p>Cloudflare Email Routing is the easiest free way to receive you@yourdomain.com in Gmail. For years the second half was Gmail's <i>Send mail as</i> with an SMTP server. Google is removing that for non-Google addresses in January 2027 and already restricts new setups (<a href="https://support.google.com/mail/answer/17101213">Google Help</a>).</p>
+<p>Your Cloudflare forwarding keeps working. You only need a new way to <b>send</b>.</p>
+
+<h2>The setup in short</h2>
+<ol>
+  <li><b>Keep Cloudflare Email Routing</b> exactly as it is (receiving).</li>
+  <li><b>Pick a sending provider</b> and verify your domain there:
+    <ul>
+      <li><a href="../guides/resend/">Resend</a> — free 3,000 emails a month; on Cloudflare DNS you can add its records with one click.</li>
+      <li><a href="../guides/brevo/">Brevo</a> — free 300 emails a day.</li>
+      <li><a href="../guides/cloudflare-email-sending/">Cloudflare Email Sending</a> — if you're already on the Workers Paid plan (3,000 emails a month included).</li>
+    </ul>
+  </li>
+  <li><b>Install <a href="https://chromewebstore.google.com/search/SendAs%20Bridge">SendAs Bridge</a></b>, paste the provider's API key and add your address.</li>
+  <li>In Gmail, pick <i>you@yourdomain.com</i> in the From row. Replies to mail that came in through Cloudflare pick it automatically.</li>
+</ol>
+
+<h2>DNS: don't create a second SPF record</h2>
+<p>Cloudflare Email Routing adds an SPF record like <code>v=spf1 include:_spf.mx.cloudflare.net ~all</code>. A domain may only have <b>one</b> SPF record. If your sending provider asks you to add SPF on the root domain, <b>edit</b> the existing record instead of adding another one. SendAs Bridge's domain check detects two SPF records and gives you the merged one to paste.</p>
+<p>Resend, Amazon SES, Postmark, SMTP2GO and Brevo handle SPF on their own sub-domain, so you usually only add their DKIM records. That's what makes Gmail and Outlook trust mail from your domain.</p>
+
+<h2>Where do my sent emails show up?</h2>
+<p>SendAs Bridge Bcc's each message to your Gmail address, so it appears inside the conversation you replied to. Import the Gmail filter from SendAs Bridge (Settings → Sent copies) to label those copies “Sent from yourdomain.com”, mark them read and keep them out of the inbox.</p>
+<p><a class="btn" href="https://chromewebstore.google.com/search/SendAs%20Bridge">Add SendAs Bridge to Chrome — free</a></p>
+</article></div>
+<footer class="site"><div class="wrap">
+  <a href="../">Home</a><a href="../guides/">Guides</a><a href="../cost/">Cost comparison</a><a href="../privacy/">Privacy</a><a href="../support/">Support</a>
+  <p>SendAs Bridge is an independent browser extension by Cedar Labs. It is not affiliated with or endorsed by Google. Gmail is a trademark of Google LLC.</p>
+</div></footer>
+</body>
+</html>
