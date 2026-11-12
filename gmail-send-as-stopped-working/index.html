@@ -30,7 +30,7 @@
 <p>Google's help article <a href="https://support.google.com/mail/answer/17101213">“Learn about changes to third-party email account support in Gmail”</a> sets out the timeline:</p>
 <ul>
   <li><b>Now (second half of 2026):</b> Gmail shows notices and <b>may restrict new configurations</b>. Some people already see “Send mail as” addresses fail with errors such as “You no longer have access to…”.</li>
-  <li><b>January 2027:</b> Gmail fully removes <b>“Send as” for third-party accounts</b>, <b>Gmailify</b> and <b>POP</b> fetching (“Check mail from other accounts”) — on the web and in the Gmail mobile apps.</li>
+  <li><b>January 2027:</b> Gmail fully removes <b>“Send as” for third-party accounts</b>, <b>Gmailify</b> and <b>POP</b> fetching (“Check mail from other accounts”), on the web and in the Gmail mobile apps.</li>
 </ul>
 <p>“Third-party” means any address Google doesn't host: your own domain on Cloudflare Email Routing, ImprovMX, Namecheap or Porkbun forwarding, Zoho, Outlook.com, Yahoo and so on.</p>
 
@@ -44,9 +44,9 @@
 
 <h2 id="works">What keeps working</h2>
 <ul>
-  <li><b>Forwarding into Gmail</b> — your mail still arrives.</li>
-  <li><b>“Send as” for Google-hosted addresses</b> — other Gmail addresses and Google Workspace aliases.</li>
-  <li><b>IMAP/POP/Gmail API for other apps</b> — you can still use Gmail from Thunderbird, Apple Mail or Outlook.</li>
+  <li><b>Forwarding into Gmail.</b> Your mail still arrives.</li>
+  <li><b>“Send as” for Google-hosted addresses:</b> other Gmail addresses and Google Workspace aliases.</li>
+  <li><b>IMAP, POP and the Gmail API for other apps.</b> You can still use Gmail from Thunderbird, Apple Mail or Outlook.</li>
 </ul>
 
 <h2 id="options">Your options</h2>
@@ -59,15 +59,15 @@
 </table>
 
 <h2 id="bridge">Keep using Gmail with SendAs Bridge</h2>
-<p>SendAs Bridge is an Edge and Firefox extension that brings the sending half back. It adds a <b>From</b> row to every Gmail compose window. When you pick your own address, the email you wrote in Gmail is sent through your own email provider's API instead of Gmail — attachments, pasted images and reply threading included — and a copy is Bcc'd back to your Gmail so the conversation stays complete.</p>
+<p>SendAs Bridge is an Edge and Firefox extension that brings the sending half back. It adds a <b>From</b> row to every Gmail compose window. When you pick your own address, the email you wrote in Gmail is sent through your own email provider's API instead of Gmail (attachments, pasted images and reply threading included), and a copy is Bcc'd back to your Gmail so the conversation stays complete.</p>
 <div class="callout ok">No password and no Google access tokens: Google's page warns about tools that ask for them. SendAs Bridge only uses an API key from <i>your</i> email provider, kept in your browser.</div>
 <ol>
   <li>Install SendAs Bridge <a href="https://microsoftedge.microsoft.com/addons/detail/hfemmpjpbjhomgmnoekfgjnlplgonjlm">for Edge</a> or <a href="https://addons.mozilla.org/firefox/addon/sendas-bridge/">for Firefox</a>.</li>
-  <li>Pick an email provider. If you used Brevo, SMTP2GO or Amazon SES for Gmail's SMTP before, you already have one — just create an API key. Otherwise <a href="../guides/resend/">Resend</a> takes about 10 minutes.</li>
+  <li>Pick an email provider. If you used Brevo, SMTP2GO or Amazon SES for Gmail's SMTP before, you already have one: just create an API key. Otherwise <a href="../guides/resend/">Resend</a> takes about 10 minutes.</li>
   <li>Add your address, run the domain check and send yourself a test.</li>
   <li>In Gmail, pick your address in the From row and click Send.</li>
 </ol>
-<p><a class="btn" href="https://microsoftedge.microsoft.com/addons/detail/hfemmpjpbjhomgmnoekfgjnlplgonjlm">Get SendAs Bridge for Edge</a> <a class="btn alt" href="https://addons.mozilla.org/firefox/addon/sendas-bridge/">for Firefox</a></p>
+<div class="ctas"><a class="btn" href="https://microsoftedge.microsoft.com/addons/detail/hfemmpjpbjhomgmnoekfgjnlplgonjlm">Add to Edge</a><a class="btn" href="https://addons.mozilla.org/firefox/addon/sendas-bridge/">Add to Firefox</a></div><p class="small muted cta-note">Free for one address. Not on the Chrome Web Store yet.</p>
 <p class="small muted">Using Cloudflare Email Routing? <a href="../cloudflare-email-routing-reply-from-gmail/">Read the Cloudflare guide</a>. Using ImprovMX? <a href="../guides/improvmx/">Read the ImprovMX guide</a>.</p>
 </article></div>
 <footer class="site"><div class="wrap">
