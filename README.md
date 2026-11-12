@@ -2,7 +2,7 @@
 
 Website for **[SendAs Bridge](https://nkiro33.github.io/sendas-bridge/)**, a browser extension that keeps you replying from you@yourdomain.com inside Gmail after Gmail ends "Send mail as" for other addresses in January 2027. It sends through your own email provider. Free, no servers.
 
-Get it for [Chrome](https://chromewebstore.google.com/search/SendAs%20Bridge) or [Edge](https://microsoftedge.microsoft.com/addons/search/SendAs%20Bridge). Pro is on [Gumroad](https://neblaze4.gumroad.com/l/sendas-pro).
+Get it for [Edge](https://microsoftedge.microsoft.com/addons/detail/hfemmpjpbjhomgmnoekfgjnlplgonjlm) or [Firefox](https://addons.mozilla.org/firefox/addon/sendas-bridge/). Not on the Chrome Web Store yet. Pro is on [Gumroad](https://neblaze4.gumroad.com/l/sendas-pro).
 
 ## Guides
 
