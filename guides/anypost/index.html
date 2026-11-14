@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Send from your own domain in Gmail with Anypost (setup guide)</title>
+<meta name="description" content="Step-by-step: use Anypost to keep sending as you@yourdomain.com from Gmail after &quot;Send mail as&quot; ends. 3,000 emails a month free while in evaluation (to your own domains only), then from $0.10 per 1,000. About 15 minutes, plus approval.">
+<link rel="canonical" href="https://nkiro33.github.io/sendas-bridge/guides/anypost/">
+<link rel="icon" type="image/png" href="../../assets/icon48.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Send from your own domain in Gmail with Anypost (setup guide)">
+<meta property="og:description" content="Step-by-step: use Anypost to keep sending as you@yourdomain.com from Gmail after &quot;Send mail as&quot; ends. 3,000 emails a month free while in evaluation (to your own domains only), then from $0.10 per 1,000. About 15 minutes, plus approval.">
+<meta property="og:url" content="https://nkiro33.github.io/sendas-bridge/guides/anypost/">
+<meta property="og:image" content="https://nkiro33.github.io/sendas-bridge/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Send from your own domain in Gmail with Anypost","totalTime":"PT15M","step":[{"@type":"HowToStep","position":1,"text":"Create an account at anypost.com."},{"@type":"HowToStep","position":2,"text":"In the dashboard, add your domain (for example yourdomain.com) and publish the CNAME records it shows: one for verification and two for DKIM. Anypost handles SPF and DKIM behind them. Verify the domain."},{"@type":"HowToStep","position":3,"text":"Create an API key. \"Send only\" is enough. Copy the secret when it is shown (it starts with ap_); Anypost shows it only once."},{"@type":"HowToStep","position":4,"text":"To send to people outside your own domain, fill in the short application from the banner in the dashboard. Anypost usually replies within one business day."},{"@type":"HowToStep","position":5,"text":"Install SendAs Bridge and connect the provider with the API key."},{"@type":"HowToStep","position":6,"text":"Add your address, run the domain check and send a test."},{"@type":"HowToStep","position":7,"text":"In Gmail, choose your address in the From row and send."}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="logo" href="../../"><img src="../../assets/icon48.png" alt="" width="30" height="30">SendAs Bridge</a>
+  <nav class="top"><a class="hide-sm" href="../../gmail-send-as-stopped-working/">Gmail change</a><a class="hide-sm" href="../../guides/">Setup guides</a><a href="../../#pricing">Pricing</a><a href="../../#install" class="btn small">Install</a></nav>
+</div></header>
+<div class="wrap"><article>
+<h1>Send from your own domain in Gmail with Anypost</h1>
+<p class="meta">Setup guide · about 15 minutes, plus approval · 3,000 emails a month free while in evaluation (to your own domains only), then from $0.10 per 1,000</p>
+<p>Gmail is ending “Send mail as” for addresses it doesn't host (<a href="https://support.google.com/mail/answer/17101213">Google Help</a>). With Anypost and SendAs Bridge you keep writing in Gmail, and your email is sent from you@yourdomain.com through your own Anypost account.</p>
+<p>Vetted sending network. New accounts need a short approval before mailing other people.</p>
+<h2>1. Set up Anypost</h2>
+<ol><li>Create an account at anypost.com.</li><li>In the dashboard, add your domain (for example yourdomain.com) and publish the CNAME records it shows: one for verification and two for DKIM. Anypost handles SPF and DKIM behind them. Verify the domain.</li><li>Create an API key. &quot;Send only&quot; is enough. Copy the secret when it is shown (it starts with ap_); Anypost shows it only once.</li><li>To send to people outside your own domain, fill in the short application from the banner in the dashboard. Anypost usually replies within one business day.</li></ol>
+<div class="callout">Until Anypost approves your account it refuses any email with a recipient outside your own verified domains. That includes the copy SendAs Bridge sends to your Gmail, so finish the application before you rely on it.<br>Each email can be about 3.5 MB of attachments at most.<br>If your DMARC record uses strict alignment (adkim=s or aspf=s), relax it, or mail sent through Anypost may fail DMARC.</div>
+<h2>2. Connect it to SendAs Bridge</h2>
+<ol>
+  <li>Install SendAs Bridge <a href="https://microsoftedge.microsoft.com/addons/detail/hfemmpjpbjhomgmnoekfgjnlplgonjlm">for Edge</a> or <a href="https://addons.mozilla.org/firefox/addon/sendas-bridge/">for Firefox</a>. The setup page opens automatically.</li>
+  <li>Choose <b>Anypost</b> and fill in:<ul><li><b>API key</b>: Anypost dashboard → API keys → Create. &quot;Send only&quot; is enough; a full key also lets SendAs Bridge check your domain.</li></ul></li>
+  <li>Click <b>Connect</b>. Your browser asks to let SendAs Bridge reach Anypost's API. Click Allow. The key is checked right away.</li>
+  <li>Add your address (for example you@yourdomain.com) and your name.</li>
+  <li>Run the <b>domain check</b> and fix anything marked ❌, then <b>send yourself a test</b>. Open it in Gmail: SendAs Bridge shows Gmail's SPF, DKIM and DMARC verdict.</li>
+</ol>
+<h2>3. Send from Gmail</h2>
+<p>Open Gmail, start a new email or a reply, and pick your address in the <b>From</b> row at the top of the compose window. Replies to mail sent to your domain select it automatically. Click Send; a copy appears in your Gmail conversation.</p>
+<h2>What's supported with Anypost</h2>
+<ul>
+  <li>Inline pictures: yes, sent as real inline images</li>
+  <li>Reply threading: headers are sent; not yet confirmed with this provider</li>
+  <li>Maximum email size: about 5 MB, up to 50 recipients</li>
+</ul>
+<div class="ctas"><a class="btn" href="https://microsoftedge.microsoft.com/addons/detail/hfemmpjpbjhomgmnoekfgjnlplgonjlm">Add to Edge</a><a class="btn" href="https://addons.mozilla.org/firefox/addon/sendas-bridge/">Add to Firefox</a></div><p class="small muted cta-note">Free for one address. Not on the Chrome Web Store yet.</p>
+<p class="small muted">Other guides: <a href="../resend/">Resend</a> · <a href="../brevo/">Brevo</a> · <a href="../smtp2go/">SMTP2GO</a> · <a href="../mailgun/">Mailgun</a> · <a href="../amazon-ses/">Amazon SES</a> · <a href="../postmark/">Postmark</a> · <a href="../cloudflare-email-sending/">Cloudflare Email Sending</a> · <a href="../mailjet/">Mailjet</a> · <a href="../sendgrid/">SendGrid</a></p>
+</article></div>
+<footer class="site"><div class="wrap">
+  <a href="../../">Home</a><a href="../../guides/">Guides</a><a href="../../cost/">Cost comparison</a><a href="../../privacy/">Privacy</a><a href="../../support/">Support</a>
+  <p>SendAs Bridge is an independent browser extension by Cedar Labs. It is not affiliated with or endorsed by Google. Gmail is a trademark of Google LLC.</p>
+</div></footer>
+</body>
+</html>

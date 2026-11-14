@@ -9,7 +9,7 @@ Get it for [Edge](https://microsoftedge.microsoft.com/addons/detail/hfemmpjpbjho
 - [Gmail "Send mail as" stopped working? What changes in 2027](https://nkiro33.github.io/sendas-bridge/gmail-send-as-stopped-working/)
 - [Cost of every option for sending as your domain from Gmail](https://nkiro33.github.io/sendas-bridge/cost/)
 - [Reply from your Cloudflare Email Routing address in Gmail](https://nkiro33.github.io/sendas-bridge/cloudflare-email-routing-reply-from-gmail/)
-- [Provider setup guides](https://nkiro33.github.io/sendas-bridge/guides/): Resend, Brevo, SMTP2GO, Mailjet, Mailgun, Postmark, SendGrid, Amazon SES, Cloudflare Email Sending, ImprovMX
+- [Provider setup guides](https://nkiro33.github.io/sendas-bridge/guides/): Resend, Brevo, SMTP2GO, Mailjet, Mailgun, Postmark, SendGrid, Amazon SES, Cloudflare Email Sending, Anypost, ImprovMX
 
 [Support](https://nkiro33.github.io/sendas-bridge/support/) · [Privacy](https://nkiro33.github.io/sendas-bridge/privacy/)
 
